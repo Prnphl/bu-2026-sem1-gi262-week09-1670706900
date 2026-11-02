@@ -97,12 +97,28 @@ namespace Assignment
 
         public string ASN01_ReverseString(string str)
         {
-            throw new NotImplementedException();
+            Stack<char> stack = new Stack<char>();
+
+            // Push every character onto the stack.
+            foreach (char character in str)
+            {
+                stack.Push(character);
+            }
+
+            // Pop characters to build the reversed string.
+            System.Text.StringBuilder reversed = new System.Text.StringBuilder();
+            while (stack.Count > 0)
+            {
+                reversed.Append(stack.Pop());
+            }
+
+            return reversed.ToString();
         }
 
         public bool ASN02_StackPalindrome(string str)
         {
-            throw new NotImplementedException();
+            // A string is a palindrome when it equals its reverse.
+            return str == ASN01_ReverseString(str);
         }
 
         #endregion
